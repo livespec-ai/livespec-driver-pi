@@ -287,13 +287,16 @@ resolve, which `check-agents-ai-references-resolve` enforces).
   before messaging, asking, directing or answering another agent session
   on any host, and before running `herdr pane send-text`,
   `herdr pane run`, `herdr agent prompt` or `tmux send-keys` against a
-  pane you did not create. Claude sessions talk through `SendMessage`
-  (across machines via Remote Control), never by typing into each
-  other's panes (maintainer ruling 2026-11-14). A pi agent cannot call
-  `SendMessage`, and other sessions may still reach a pi agent by typing
-  into its pane. To reach a CLAUDE session, a pi agent must NOT type
-  into that session's pane (a managed hook denies it): leave a ledger
-  comment on the work item or plan epic concerned instead.
+  pane you did not create. Prefer `SendMessage` (across machines via
+  Remote Control) to message another Claude session, because typed text
+  can interrupt the maintainer. Typing into a pane is still allowed and
+  nothing blocks it; use it when necessary (a slash command, a picker, a
+  session `SendMessage` cannot reach, a Codex or pi seat) (maintainer
+  rulings 2026-11-14). A pi agent cannot call `SendMessage`, so other
+  sessions reach a pi agent by typing into its pane. To reach a CLAUDE
+  session, a pi agent may type into that session's pane when it must,
+  but should prefer a ledger comment on the work item or plan epic
+  concerned, which does not interrupt the maintainer.
 
 ## Decision authority — when to ask, proceed, or self-resolve
 
