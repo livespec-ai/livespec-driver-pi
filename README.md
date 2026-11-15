@@ -2,11 +2,11 @@
 
 Built with [livespec](https://livespec-ai.org/)
 
-pi Driver package for [livespec](https://github.com/thewoolleyman/livespec) —
+pi Driver package for [livespec](https://github.com/livespec-ai/livespec) —
 thin SKILL.md bindings over livespec core's harness-neutral operation prose
 and spec-side CLIs, for the pi coding agent runtime. The analogue of
-[livespec-driver-claude](https://github.com/thewoolleyman/livespec-driver-claude)
-and [livespec-driver-codex](https://github.com/thewoolleyman/livespec-driver-codex).
+[livespec-driver-claude](https://github.com/livespec-ai/livespec-driver-claude)
+and [livespec-driver-codex](https://github.com/livespec-ai/livespec-driver-codex).
 
 Everything substantive — the driving prose, the reference spec-side CLIs, the
 JSON schemas, the built-in templates — ships with livespec core. This package
@@ -32,8 +32,8 @@ Both core and this Driver install as pi git packages, at PROJECT scope (`-l`),
 from the governed project's root:
 
 ```bash
-pi install git:github.com/thewoolleyman/livespec@release -l
-pi install git:github.com/thewoolleyman/livespec-driver-pi@release -l
+pi install git:github.com/livespec-ai/livespec@release -l
+pi install git:github.com/livespec-ai/livespec-driver-pi@release -l
 ```
 
 Core is a resource-less carrier: it declares no `pi` manifest and ships no pi

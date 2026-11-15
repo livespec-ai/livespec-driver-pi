@@ -12,7 +12,7 @@
 #
 # This Driver's OWN package root carries no `prose/` and no `scripts/` — it
 # ships bindings, this resolver, and one sanctioned extension. The prose and the
-# reference spec-side CLIs ship with livespec CORE (`thewoolleyman/livespec`),
+# reference spec-side CLIs ship with livespec CORE (`livespec-ai/livespec`),
 # installed alongside as a resource-less pi git package per livespec
 # SPECIFICATION/contracts.md §"Plugin distribution".
 #
@@ -23,9 +23,9 @@
 #      checkout's core.
 #   2. <project-root>/.claude-plugin when it carries prose/ — the governed
 #      project IS the livespec core repo itself (dogfooding).
-#   3. <project-root>/.pi/git/github.com/thewoolleyman/livespec/.claude-plugin —
+#   3. <project-root>/.pi/git/github.com/livespec-ai/livespec/.claude-plugin —
 #      the PROJECT-scope pi package clone (`pi install ... -l`).
-#   4. ~/.pi/agent/git/github.com/thewoolleyman/livespec/.claude-plugin — the
+#   4. ~/.pi/agent/git/github.com/livespec-ai/livespec/.claude-plugin — the
 #      USER-scope pi package clone.
 #
 # Steps 3 and 4 are pi's own documented git-package clone locations. A candidate
@@ -50,7 +50,7 @@ if ! project_root="$(cd "$project_root" 2>/dev/null && pwd)"; then
     exit 1
 fi
 
-core_clone_suffix="git/github.com/thewoolleyman/livespec/.claude-plugin"
+core_clone_suffix="git/github.com/livespec-ai/livespec/.claude-plugin"
 
 candidates=()
 if [ -n "${LIVESPEC_CORE_PLUGIN_ROOT:-}" ]; then
@@ -81,7 +81,7 @@ done
         printf 'missing install — fix or unset it before installing anything.\n\n'
     fi
     printf 'Install livespec core as a project-scope pi package from the repo root:\n'
-    printf '    pi install git:github.com/thewoolleyman/livespec@release -l\n\n'
+    printf '    pi install git:github.com/livespec-ai/livespec@release -l\n\n'
     printf 'pi resolves project packages only after the project is TRUSTED, so a\n'
     printf 'non-interactive run (-p, --mode json, --mode rpc) in an untrusted project\n'
     printf 'silently loads nothing. Establish trust before driving unattended.\n'

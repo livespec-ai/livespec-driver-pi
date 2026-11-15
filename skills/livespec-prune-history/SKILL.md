@@ -27,7 +27,7 @@ restate its steps here — core owns the behavior, this file owns the wiring.
 This Driver package ships the eight bindings, the resolver named below, and one
 sanctioned extension. It carries **no** `prose/` and **no** `scripts/`. The
 harness-neutral prose and the reference spec-side CLIs ship with **livespec
-core** (`thewoolleyman/livespec`), installed alongside this Driver as a
+core** (`livespec-ai/livespec`), installed alongside this Driver as a
 resource-less pi git package.
 
 The ordered algorithm is realized ONCE, by this package's
@@ -47,8 +47,8 @@ echo "$LIVESPEC_CORE_ROOT"
 The resolver searches, in order: the `LIVESPEC_CORE_PLUGIN_ROOT` override; the
 governed project's own `.claude-plugin/` when it carries `prose/` (the project
 IS livespec core — dogfooding); the project-scope pi package clone under
-`.pi/git/github.com/thewoolleyman/livespec/`; and the user-scope clone under
-`~/.pi/agent/git/github.com/thewoolleyman/livespec/`.
+`.pi/git/github.com/livespec-ai/livespec/`; and the user-scope clone under
+`~/.pi/agent/git/github.com/livespec-ai/livespec/`.
 
 On failure the resolver writes its own diagnostic to stderr and exits 1. STOP
 and surface that diagnostic verbatim. Do not improvise a path, and do not run

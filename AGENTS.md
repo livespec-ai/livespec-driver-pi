@@ -8,7 +8,7 @@ architecture"). It is the pi-runtime analogue of `livespec-driver-claude`
 and `livespec-driver-codex`, and it is deliberately small. Everything
 substantive — the harness-neutral driving prose, the reference spec-side
 CLIs, the JSON schemas, the built-in templates — ships with livespec core
-(`thewoolleyman/livespec`); this repo only binds that material to the pi
+(`livespec-ai/livespec`); this repo only binds that material to the pi
 runtime.
 
 The authoritative contracts this repo implements were ratified as livespec
@@ -283,7 +283,7 @@ resolve, which `check-agents-ai-references-resolve` enforces).
   `tick_generation_changed` race both demand, and the dispatch journal
   that is the audit trail of every attempt.
 - Read the fleet's distributed SendMessage protocol
-  (<https://github.com/thewoolleyman/livespec-dev-tooling/blob/master/%2Eai/distributed-sendmessage-protocol.md>)
+  (<https://github.com/livespec-ai/livespec-dev-tooling/blob/master/%2Eai/distributed-sendmessage-protocol.md>)
   before messaging, asking, directing or answering another agent session
   on any host, and before running `herdr pane send-text`,
   `herdr pane run`, `herdr agent prompt` or `tmux send-keys` against a

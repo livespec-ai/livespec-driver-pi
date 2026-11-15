@@ -17,7 +17,7 @@ __all__: list[str] = []
 
 _REPO_ROOT = Path(__file__).resolve().parents[2]
 _RESOLVER = _REPO_ROOT / "lib" / "resolve-core-root.sh"
-_CORE_CLONE_SUFFIX = "git/github.com/thewoolleyman/livespec/.claude-plugin"
+_CORE_CLONE_SUFFIX = "git/github.com/livespec-ai/livespec/.claude-plugin"
 
 
 def _run(
