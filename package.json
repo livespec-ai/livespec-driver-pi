@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thewoolleyman/livespec-driver-pi.git"
+    "url": "git+https://github.com/livespec-ai/livespec-driver-pi.git"
   },
   "pi": {
     "skills": [

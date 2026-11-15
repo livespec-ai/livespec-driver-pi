@@ -31,7 +31,7 @@
 # confusingly than failing here with an install instruction.
 set -euo pipefail
 
-core_clone_suffix="git/github.com/thewoolleyman/livespec/.claude-plugin"
+core_clone_suffix="git/github.com/livespec-ai/livespec/.claude-plugin"
 
 candidates=()
 if [ -n "${LIVESPEC_CORE_PLUGIN_ROOT:-}" ]; then
@@ -62,7 +62,7 @@ if [ -z "$core_root" ]; then
         printf '\n'
         printf 'Set LIVESPEC_CORE_PLUGIN_ROOT to a livespec checkout'"'"'s .claude-plugin, or\n'
         printf 'install core as a project-scope pi package from the repo root:\n'
-        printf '    pi install git:github.com/thewoolleyman/livespec@release -l\n'
+        printf '    pi install git:github.com/livespec-ai/livespec@release -l\n'
     } >&2
     exit 1
 fi
