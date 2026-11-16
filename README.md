@@ -84,3 +84,5 @@ for the surface a change would have to preserve.
 The three repo secrets and fleet-manifest registration. See
 `AGENTS.md` "Bootstrap status" for the current state and the exact remaining
 steps.
+
+Pull requests land on master through the livespec-ai merge queue (ruleset master-incident-recovery-bypass); ci-green is the required check.
