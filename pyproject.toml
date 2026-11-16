@@ -157,6 +157,12 @@ file_lloc_hard_gate = true
 # gate). The switch is ANDed with host eligibility by the client, so a host with
 # no gates credential, such as a Fabro sandbox, still gates locally.
 delegated_gate = true
+# Gate Job size, matched to measured draw (plan gate-job-resources, livespec-dev-tooling-ukoeah):
+# Honeycomb k8s.pod.cpu.usage / k8s.pod.memory.working_set over the 24 h to 2026-11-16 19:0xZ, pods
+# gate-<this repo>-*: cpu P95 1.28 (max 1.28), memory max 0.34 GiB. The values add headroom.
+# Revert trigger: a gate CPU-throttled into a timeout, or gate wall-time p50 up over 25 % in 2 h.
+gate_cpu = 2
+gate_memory = "2Gi"
 plan_lifecycle_anchor = true
 scenario_tiers = ["tests.e2e-cli", "tests.e2e", "tests.integration", "tests.consumer", "tests.prompts", "tests.dev-tooling", "tests.extensions"]
 # EMPTY on purpose, and empty is the STRICT spelling for this key (its
