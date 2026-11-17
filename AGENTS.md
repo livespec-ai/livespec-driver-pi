@@ -144,7 +144,7 @@ ledger-held; what follows is orientation, not the source of truth:
   landed 2026-08-16, and `release-please`, `auto-enable-merge`,
   `fast-forward-release-branch`, and the release-dispatch fan-out have
   all succeeded since. The `release` branch exists, so the `@release`
-  install channel is live; v0.3.0 through v0.5.0 are cut, each carrying
+  install channel is live; v0.3.0 through v0.7.0 are cut, each carrying
   the `package.json` `$.version` bump via `release-please-config.json`'s
   `extra-files` updater.
 - **Fleet-manifest registration and the GitHub topic**, the two
