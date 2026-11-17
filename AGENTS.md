@@ -196,8 +196,8 @@ ledger-held; what follows is orientation, not the source of truth:
   core out at the release tag `.livespec.jsonc` pins, since the checker ships
   with CORE) — including that job's entry in `ci-green`'s `needs:` list,
   which is the part a forgotten pass silently loses.
-- **`tests/heading-coverage.json`**, one entry per spec `## ` H2. Every entry
-  is a `TODO` today; the `scenarios.md` reasons name the INTEGRATION tier
+- **`tests/heading-coverage.json`**, one entry per spec `## ` H2. Entries
+  not yet exercised by a test are `TODO`; the `scenarios.md` reasons name the INTEGRATION tier
   explicitly, which `check-heading-coverage` requires for a scenario heading —
   a reason that merely cites the implementing work-item fails the check.
 - **The `.ai/` guidance tree** (`beads-tenant.md`, `pi-runtime.md`),
