@@ -79,10 +79,10 @@ core's static doctor phase over it in CI, resolving core at the release tag
 Start at `SPECIFICATION/spec.md` for the shape, then `SPECIFICATION/contracts.md`
 for the surface a change would have to preserve.
 
-## Still pending
+## Status
 
-The three repo secrets and fleet-manifest registration. See
-`AGENTS.md` "Bootstrap status" for the current state and the exact remaining
-steps.
+The bootstrap is complete: the three repo secrets are set and the Driver is
+registered in the livespec fleet manifest. See `AGENTS.md` "Post-bootstrap
+status" for the current state and what remains open.
 
 Pull requests land on master through the livespec-ai merge queue (ruleset master-incident-recovery-bypass); ci-green is the required check.
