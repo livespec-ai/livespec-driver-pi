@@ -139,7 +139,7 @@ ledger-held; what follows is orientation, not the source of truth:
 - The enforcement wiring: `justfile` (sole entry point), `lefthook.yml`,
   `check-targets.txt` carrying the full canonical block plus the private
   extras, and the `dev-tooling/` scripts.
-- All eight fleet workflows and release automation, and they are not
+- The fleet workflows and release automation, and they are not
   merely present — they RUN. The fleet GitHub App installation grant
   landed 2026-08-16, and `release-please`, `auto-enable-merge`,
   `fast-forward-release-branch`, and the release-dispatch fan-out have
