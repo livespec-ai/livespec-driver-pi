@@ -4,8 +4,11 @@ set -uo pipefail
 # Ratified shell-quality deviation: this pre-push gate intentionally does not
 # use errexit because a green-token miss should fall through to the full check.
 if uv run python -m livespec_dev_tooling.green_token check 2>&1; then
-    echo ":: pre-push: green token matched; skipping full aggregate"
-    exit 0
+    # A token match no longer skips the aggregate: the token memoizes a tree, and members that read
+    # state outside the tree (master CI, branch protection, the ledger, the workflow-edit exemption)
+    # can answer differently for the same tree, so a refused or partial earlier run must not
+    # stand in for this push (livespec-dev-tooling-mj37jk; dev-tooling fdd0ea878).
+    echo ":: pre-push: green token matched - NOT skipping the aggregate; members that read state outside the tree must run on this push"
 fi
 
 # A delegating host hands the gate to the remote executor. The exec is

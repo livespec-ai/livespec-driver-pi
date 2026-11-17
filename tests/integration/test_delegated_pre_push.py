@@ -90,12 +90,20 @@ def test_non_delegating_host_runs_just_check_locally(tmp_path: Path) -> None:
     assert not any("gate_remote_delegate run" in call for call in calls)
 
 
-def test_green_token_match_skips_both_gates(tmp_path: Path) -> None:
+def test_green_token_match_still_runs_the_gate(tmp_path: Path) -> None:
+    """A token match must not skip members that read state outside the tree."""
     rc, calls = _run_pre_push(tmp_path=tmp_path, token=0, enabled=0, run=0)
 
     assert rc == 0
-    assert not any("gate_remote_delegate" in call for call in calls)
-    assert not any(call.startswith("just") for call in calls)
+    assert any("gate_remote_delegate run" in call for call in calls)
+
+
+def test_green_token_match_on_a_local_host_runs_the_aggregate(tmp_path: Path) -> None:
+    """With no delegation available, a token match still runs `just check`."""
+    rc, calls = _run_pre_push(tmp_path=tmp_path, token=0, enabled=1, run=0)
+
+    assert rc == 0
+    assert "just check" in calls
 
 
 def test_host_without_the_gates_credential_gates_locally_and_says_so(
