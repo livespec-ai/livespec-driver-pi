@@ -205,9 +205,10 @@ ledger-held; what follows is orientation, not the source of truth:
   `check-agents-ai-references-resolve` was armed and structurally
   incapable of firing: it is a dangling-REFERENCE check, and a repo that
   references zero `.ai/` files passes by construction.
-- **Branch protection**, verified live: `master` requires exactly one status
-  context, `ci-green`, with admin enforcement and linear history on and
-  strict/up-to-date OFF. That single context is why adding a CI job without
+- **Merge gating**, verified live: `master` requires exactly one status
+  context, `ci-green`, and pull requests land through the livespec-ai merge
+  queue (rebase merge, ruleset `master-incident-recovery-bypass`) rather than
+  by a strict/up-to-date branch rule. That single context is why adding a CI job without
   adding it to `ci-green`'s `needs:` list stops gating silently.
 
 **Open — the wrap-up epic's carriers are ALL closed; what remains is tracked elsewhere:**
