@@ -137,6 +137,13 @@ markers = [
 # from `resolve_check_universe()`, so an empty value makes them STRICTER
 # rather than blinder.
 [tool.livespec_dev_tooling]
+# Org merge-queue cutover (plan stale-base-merge-options, epic
+# livespec-dev-tooling-xowhol). The incident recovery principal's GitHub App
+# id, the ONLY bypass actor branch_protection_alignment admits on a
+# queue-required repository's default-branch rulesets: the
+# livespec-ai-incident-recovery org App's Integration id. An App id is not a
+# secret.
+recovery_bypass_integration_id = 5761967
 # The authors whose pull requests a merge group may carry onto self-hosted capacity: the
 # merge-group-guard job in ci.yml reads this list at the group's BASE commit and routes the
 # group to hosted capacity unless every queued PR is same-repository and authored by a name on it.
