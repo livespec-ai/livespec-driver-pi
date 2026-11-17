@@ -953,7 +953,9 @@ jobs:
   export-telemetry:
     name: export-telemetry
     needs: [check-python, check-coverage, check-per-file-coverage, check-python-batch, check-metadata, check-metadata-batch]
-    if: ${{ !cancelled() && github.event_name == 'push' }}
+    # push AND merge_group: a merge_group run must emit its ci.run span too
+    # (livespec-dev-tooling-pixkgb; maintainer ruling 2026-11-17).
+    if: ${{ !cancelled() && (github.event_name == 'push' || github.event_name == 'merge_group') }}
     runs-on: ubuntu-latest
     permissions:
       actions: read
