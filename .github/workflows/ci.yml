@@ -304,6 +304,7 @@ jobs:
   #     coverage-pair producer job below — it and check-per-file-coverage both
   #     spawn a suite, so they are chained rather than run side by side.
   check-python:
+    timeout-minutes: 30
     name: ${{ matrix.target }}
     needs: [merge-group-guard]
     if: ${{ !cancelled() && needs.merge-group-guard.outputs.skip != 'true' }}
@@ -417,6 +418,7 @@ jobs:
   # tool-backed slug and check-tool-backed-check-completeness requires every
   # tool-backed slug to be a LITERAL matrix.target member.
   check-coverage:
+    timeout-minutes: 30
     name: ${{ matrix.target }}
     needs: [merge-group-guard]
     if: ${{ !cancelled() && needs.merge-group-guard.outputs.skip != 'true' }}
@@ -501,6 +503,7 @@ jobs:
   # the same container workspace mount. If the download ever regresses, the
   # recipe's fallback runs the clean suite standalone — slower, never wrong.
   check-per-file-coverage:
+    timeout-minutes: 30
     name: check-per-file-coverage
     needs: [merge-group-guard, check-coverage]
     if: ${{ !cancelled() && needs.check-coverage.result == 'success' && needs.merge-group-guard.outputs.skip != 'true' }}
@@ -562,6 +565,7 @@ jobs:
   # check-pi-package-structure is this repo's private .py-shaped extra (NOT
   # canonical); it batches here alongside the canonical scanners.
   check-python-batch:
+    timeout-minutes: 30
     name: check-python-batch
     needs: [merge-group-guard]
     if: ${{ !cancelled() && needs.merge-group-guard.outputs.skip != 'true' }}
@@ -647,6 +651,7 @@ jobs:
   # trivially passes; on a master push the range is empty. It NEVER silently
   # passes — an unresolvable base fails the job actionably.
   check-metadata:
+    timeout-minutes: 30
     name: ${{ matrix.target }}
     needs: [merge-group-guard]
     if: ${{ !cancelled() && needs.merge-group-guard.outputs.skip != 'true' }}
@@ -714,6 +719,7 @@ jobs:
   # gated on `matrix.target ==` conditions; a batch job has no such selector,
   # and installing both for every run of this one job is cheap.
   check-metadata-batch:
+    timeout-minutes: 30
     name: check-metadata-batch
     needs: [merge-group-guard]
     if: ${{ !cancelled() && needs.merge-group-guard.outputs.skip != 'true' }}
@@ -850,6 +856,7 @@ jobs:
   # status context, ci-green, so a job absent from its needs: list runs and
   # reports but gates nothing.
   check-extension-quality:
+    timeout-minutes: 30
     name: check-extension-quality
     needs: [merge-group-guard]
     if: ${{ !cancelled() && needs.merge-group-guard.outputs.skip != 'true' }}
@@ -888,6 +895,7 @@ jobs:
   # it via LIVESPEC_CORE_PLUGIN_ROOT. It gets its OWN job rather than a batch
   # line because it needs that second checkout, which no other target does.
   check-doctor-static:
+    timeout-minutes: 30
     name: check-doctor-static
     needs: [merge-group-guard]
     if: ${{ !cancelled() && needs.merge-group-guard.outputs.skip != 'true' }}
