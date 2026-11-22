@@ -1,9 +1,4 @@
-# Workflow-edit exemption — one exemption binds to one reviewed change.
-#
-# The change: the ci.yml export-telemetry job condition widens from push-only to
-# push or merge_group, so merge_group runs emit ci.run spans to Honeycomb. One modified
-# `if:` line plus two comment lines. The modified line is a deleted-plus-added line, so the
-# mechanical check does not admit the additive tier; this declaration therefore does not
-# attest change=additive and the MAINTAINER tier label applies.
-work_item=livespec-driver-pi-6exrdf
-reason=Widen export-telemetry to also run for merge_group (livespec-dev-tooling-pixkgb); maintainer ruling 2026-11-17 that Honeycomb metrics must be fixed.
+work_item=livespec-driver-pi-47vt3p
+reason=Add a job-level timeout-minutes: 30 line under each listed self-hosted CI job so a hung job is cancelled at its measured limit (fleet sweep of livespec-dev-tooling-u6jztk). Purely additive.
+change=additive
+ci_runtime=no-significant-increase
